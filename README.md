@@ -1,6 +1,8 @@
 # BizFinder - İşletme Keşif Platformu
 
-B2B satış destek aracı - Potansiyel müşterileri otomatik keşfedin.
+🎯 Amaç ve Sunulan Hizmet
+
+BizFinder, işletmelerin doğru müşteriye daha hızlı ulaşmasını sağlamak için geliştirilmiştir. Harita tabanlı arama, kategori filtreleme ve akıllı veri toplama özellikleri sayesinde hedef bölgenizdeki potansiyel müşterileri keşfedebilir, tekrar eden kayıtları önleyerek temiz veri elde edebilir ve sonuçları kolayca dışa aktarabilirsiniz. Teknik detaylarla uğraşmadan, tek tıkla çalışan yapısıyla satış ve pazarlama süreçlerinizi hızlandırmayı amaçlar.
 
 ## 🚀 Özellikler
 
