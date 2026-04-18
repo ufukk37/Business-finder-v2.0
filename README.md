@@ -16,6 +16,13 @@ B2B satış destek aracı - Potansiyel müşterileri otomatik keşfedin.
 - ✅ **Ücretsiz API**: OpenStreetMap/Nominatim (Google gerektirmez)
 - 🆕 **Tek Dosya Çalıştırılabilir (.exe)**: Program artık kurulum gerektirmeden tek tıkla çalıştırılabilir.
 
+  <img width="1892" height="857" alt="BizFinder" src="https://github.com/user-attachments/assets/aa1e6c63-5a53-431e-8a78-3a7206d18f32" />
+
+  <img width="1892" height="862" alt="BizFinder1" src="https://github.com/user-attachments/assets/40c7c58e-9c70-4a5f-ae7d-d2034bc8bd9b" />
+
+  
+
+
 ## 📦 Kurulum ve Çalıştırma
 
 ### Yöntem 1: Tek Tıkla Çalıştırma (Önerilen)
@@ -107,21 +114,3 @@ business-finder/
 └── README.md           # Proje belgelendirmesi
 ```
 
-## 🐛 Sorun Giderme
-
-### "Module not found" hatası (Backend)
-```cmd
-pip install -r requirements.txt --break-system-packages
-```
-
-### Port kullanımda hatası (Backend & Frontend)
-```cmd
-# Backend için farklı port
-python -m uvicorn app.main:app --reload --port 8001
-
-# Frontend için farklı port
-npm run dev -- --port 5174
-```
-
-### CORS hatası
-Geliştirici ortamında Backend ve Frontend'in aynı anda çalıştığından ve doğru portların kullanıldığından emin olun.
