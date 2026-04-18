@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BizFinder - İşletme Keşif Platformu
 
 B2B satış destek aracı - Potansiyel müşterileri otomatik keşfedin.
@@ -117,3 +118,6 @@ npm run dev -- --port 5174
 Backend ve frontend'in aynı anda çalıştığından emin ol.
 
 
+=======
+# Business-finder-v2.0
+>>>>>>> a73839f9f0ea5828a34e1025e42a04f5e5fb059f
