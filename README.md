@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # BizFinder - İşletme Keşif Platformu
 
 B2B satış destek aracı - Potansiyel müşterileri otomatik keşfedin.
@@ -15,12 +14,21 @@ B2B satış destek aracı - Potansiyel müşterileri otomatik keşfedin.
 - ✅ **Filtrelenmiş Excel İndirme**: Sadece seçili veriler
 - ✅ **Dinamik Arama Limiti**: 100 - 5000 arası
 - ✅ **Ücretsiz API**: OpenStreetMap/Nominatim (Google gerektirmez)
+- 🆕 **Tek Dosya Çalıştırılabilir (.exe)**: Program artık kurulum gerektirmeden tek tıkla çalıştırılabilir.
 
+## 📦 Kurulum ve Çalıştırma
 
-## 🛠️ Kurulum
+### Yöntem 1: Tek Tıkla Çalıştırma (Önerilen)
 
-### 1. Backend Kurulumu
+Projenin son halinde backend ve frontend birleştirilmiş olup, tek bir `.exe` uygulaması olarak paketlenmiştir. Bu sayede hiçbir ek kurulum gerektirmeden çalıştırılabilir.
+Veritabanı dosyası (`business_finder.db`) uygulamanın bulunduğu dizine kaydedilir, böylece verileriniz kalıcı olur.
 
+1. `dist/BizFinder.exe` dosyasına çift tıklayın.
+2. Uygulama başlayacak ve tarayıcınızda otomatik olarak `http://127.0.0.1:8000` adresinde açılacaktır.
+
+### Yöntem 2: Geliştirici Ortamı (Kaynak Koddan)
+
+**1. Backend Kurulumu**
 ```cmd
 cd business-finder\backend
 
@@ -34,8 +42,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Frontend Kurulumu
-
+**2. Frontend Kurulumu**
 ```cmd
 cd business-finder\frontend
 
@@ -43,69 +50,71 @@ cd business-finder\frontend
 npm install
 ```
 
-## ▶️ Çalıştırma
+**Çalıştırma:**
 
-### Terminal 1 - Backend
-
+Terminal 1 - Backend:
 ```cmd
 cd business-finder\backend
 venv\Scripts\activate
 python -m uvicorn app.main:app --reload
 ```
+Backend API: `http://localhost:8000`
 
-Backend: http://localhost:8000
-
-### Terminal 2 - Frontend
-
+Terminal 2 - Frontend:
 ```cmd
 cd business-finder\frontend
 npm run dev
 ```
+Frontend URL: `http://localhost:5173`
 
-Frontend: http://localhost:5173
+## 🛠️ Uygulamayı `.exe` Olarak Paketleme (Build)
+
+Projeyi kendiniz derleyip `.exe` haline getirmek isterseniz:
+
+1. Önce Frontend kodunu derleyin:
+```cmd
+cd business-finder\frontend
+npm run build
+```
+
+2. Ana dizine dönün ve PyInstaller'ı kullanın:
+```cmd
+cd ..
+pip install pyinstaller
+pyinstaller BizFinder.spec
+```
+
+İşlem tamamlandığında `dist` klasörü içerisinde `BizFinder.exe` dosyanız oluşacaktır.
 
 ## 📖 Kullanım
 
-1. http://localhost:5173 adresini aç
-2. **Kayıt Ol** ile yeni hesap oluştur
-3. Dashboard'dan **Arama** sayfasına git
-4. Şehir ve kategori seç
-5. Haritadan konum veya alan belirle
-6. **Ara** butonuna tıkla
-7. **İşletmeler** sayfasından filtrele ve Excel'e aktar
-   
+1. Uygulamayı çalıştırdıktan sonra (veya geliştirici modunda ilgili adrese girdikten sonra), **Kayıt Ol** ile yeni hesap oluşturun.
+2. Dashboard'dan **Arama** sayfasına gidin.
+3. Şehir ve kategori seçin, veya haritadan konum ve alan (polygon/yarıçap) belirleyin.
+4. **Ara** butonuna tıklayın.
+5. **İşletmeler** sayfasından filtreleme yaparak sonuçları inceleyin ve Excel formatında aktarın.
 
 ## 📁 Proje Yapısı
 
 ```
 business-finder/
-├── backend/
-│   ├── app/
-│   │   ├── api/           # API endpoint'leri
-│   │   ├── core/          # Database, config, security
-│   │   ├── models/        # SQLAlchemy modelleri
-│   │   ├── schemas/       # Pydantic şemaları
-│   │   ├── services/      # İş mantığı
-│   │   └── main.py        # FastAPI app
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── components/    # React bileşenleri
-│   │   ├── contexts/      # Auth context
-│   │   ├── pages/         # Sayfa bileşenleri
-│   │   └── utils/         # Yardımcı fonksiyonlar
-│   └── package.json
-└── README.md
+├── backend/            # FastAPI arka uç uygulaması
+├── frontend/           # React ön uç uygulaması
+├── build/              # PyInstaller geçici build dosyaları
+├── dist/               # Paketlenmiş nihai .exe klasörü
+├── BizFinder.spec      # PyInstaller paketleme konfigürasyonu
+├── main_app.py         # .exe sürümü için FastAPI & Static file sunucu başlangıç noktası
+└── README.md           # Proje belgelendirmesi
 ```
 
 ## 🐛 Sorun Giderme
 
-### "Module not found" hatası
+### "Module not found" hatası (Backend)
 ```cmd
 pip install -r requirements.txt --break-system-packages
 ```
 
-### Port kullanımda hatası
+### Port kullanımda hatası (Backend & Frontend)
 ```cmd
 # Backend için farklı port
 python -m uvicorn app.main:app --reload --port 8001
@@ -115,9 +124,4 @@ npm run dev -- --port 5174
 ```
 
 ### CORS hatası
-Backend ve frontend'in aynı anda çalıştığından emin ol.
-
-
-=======
-# Business-finder-v2.0
->>>>>>> a73839f9f0ea5828a34e1025e42a04f5e5fb059f
+Geliştirici ortamında Backend ve Frontend'in aynı anda çalıştığından ve doğru portların kullanıldığından emin olun.
