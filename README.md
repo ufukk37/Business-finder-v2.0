@@ -18,9 +18,8 @@ B2B satış destek aracı - Potansiyel müşterileri otomatik keşfedin.
 
   <img width="1892" height="857" alt="BizFinder" src="https://github.com/user-attachments/assets/aa1e6c63-5a53-431e-8a78-3a7206d18f32" />
 
-  
 
-  <img width="1892" height="862" alt="BizFinder1" src="https://github.com/user-attachments/assets/40c7c58e-9c70-4a5f-ae7d-d2034bc8bd9b" />
+  <img width="1892" height="862" alt="BizFinder1" src="https://github.com/user-attachments/assets/74edcc70-31f0-4ced-9445-96d2f33f92eb" />
 
   
 
