@@ -1,0 +1,25 @@
+# BizFinder Backend - Python 3.13 Uyumlu
+# FastAPI ve web framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Veritabanı - SQLite
+sqlalchemy
+aiosqlite
+
+# Pydantic
+pydantic>=2.10
+pydantic[email]
+
+# HTTP client
+httpx
+
+# Excel export
+openpyxl
+
+# JWT Authentication
+PyJWT>=2.8.0
+
+# Yardımcı
+python-dotenv
